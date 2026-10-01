@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, phase/* ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+      - name: Setup Test Database
+        run: PGPASSWORD=postgres psql -U postgres -h 127.0.0.1 -d postgres -c "CREATE SCHEMA IF NOT EXISTS auth; CREATE EXTENSION IF NOT EXISTS pgcrypto;" && PGPASSWORD=postgres psql -U postgres -h 127.0.0.1 -d postgres -c "CREATE TABLE IF NOT EXISTS auth.users (id UUID PRIMARY KEY DEFAULT gen_random_uuid(), email text);" && PGPASSWORD=postgres psql -U postgres -h 127.0.0.1 -d postgres -c "CREATE OR REPLACE FUNCTION auth.uid() RETURNS UUID AS \$\$ SELECT nullif(current_setting('request.jwt.claim.sub', true), '')::uuid; \$\$ LANGUAGE SQL SECURITY DEFINER; CREATE OR REPLACE FUNCTION auth.jwt() RETURNS jsonb AS \$\$ SELECT nullif(current_setting('request.jwt.claim.role', true), '')::jsonb; \$\$ LANGUAGE SQL SECURITY DEFINER;" && PGPASSWORD=postgres psql -U postgres -h 127.0.0.1 -d postgres -f supabase/migrations/20240319000000_foundation_schema.sql
+      - run: npm test
