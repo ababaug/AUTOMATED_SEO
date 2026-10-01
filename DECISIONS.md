@@ -178,3 +178,25 @@ This file records architectural and product decisions. Do not silently turn assu
 **Premium Hypothesis:** $149/mo for 1 business site and 1 location with capped pages/audits.
 **Reason/evidence:** Sets clear measurable bounds for the free pilot to ensure cost control and clear success/failure metrics.
 **Follow-up/reversal condition:** Adjust premium hypothesis if customer interviews show lower/higher willingness to pay.
+
+## D-020 — WordPress Metadata Change Type for Publishing
+
+**Status:** ACCEPTED
+**Date:** 2026-10-01
+**Milestone:** M5
+**Decision:** The initial supported, narrow, reversible WordPress publishing operation will be updating the Yoast SEO meta description (`yoast_wpseo_metadesc`).
+**Reason/evidence:** Yoast is the most ubiquitous SEO plugin for WordPress. Modifying the meta description is a highly visible, well-understood SEO improvement that can be safely rolled back by reverting the single post meta field.
+**Security/privacy impact:** Low. Changes are restricted to explicit post meta fields, preventing malicious script injection in main post content.
+**Cost/operational impact:** Requires a custom WordPress integration endpoint or plugin compatibility to reliably read and write this specific meta key.
+**Follow-up/reversal condition:** If customers predominantly use RankMath or All in One SEO, additional mappings will be required.
+
+## D-021 — Milestone 5 Implementation Blocked
+
+**Status:** ACCEPTED
+**Date:** 2026-10-01
+**Milestone:** M5
+**Decision:** Implementation of M5 (Approved WordPress publishing workflow) is currently BLOCKED and suspended.
+**Reason/evidence:** The project operating rules mandate: "Verify prerequisites and existing work before changing code" and "Do not begin the next milestone until the current exit gate passes". Currently, prerequisites M1-M4 (including authentication, databases, crawler, AI integration, and the Next.js app itself) are absent from the repository. Without the application foundation, it is impossible to implement or test a publishing workflow.
+**Security/privacy impact:** None. Enforces secure development practices by preventing untested orphaned code.
+**Cost/operational impact:** Delays publishing feature until foundational milestones are actually delivered.
+**Follow-up/reversal condition:** Resume M5 implementation when M4 is explicitly passed and the foundational application code is present on main.

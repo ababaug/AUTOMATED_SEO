@@ -132,3 +132,29 @@ This file records tests that were actually run. Do not mark planned tests as pas
 **Failures fixed in this run:**  
 **Remaining blockers:**  
 **Milestone gate:** PASS / FAIL / BLOCKED
+
+---
+
+### Test Run 2026-10-01 / Milestone M5
+
+**Environment:** N/A (No application exists)
+**Commit:** Pending (M5 branch)
+**Runner:** Google Jules
+**Scope:** M5 (WordPress Publishing Workflow)
+
+| Test | Result | Evidence | Issue/follow-up |
+|---|---|---|---|
+| Verify M4 is PASS and accepted on main | FAIL | `CHANGELOG.md` and Git history show only M0 completed. | Must implement M1-M4 first. |
+| Successful staging application. | BLOCKED | Missing M1-M4 code. | |
+| Permission denied. | BLOCKED | Missing M1-M4 code. | |
+| Concurrent external edit conflict. | BLOCKED | Missing M1-M4 code. | |
+| Network timeout. | BLOCKED | Missing M1-M4 code. | |
+| Duplicate delivery. | BLOCKED | Missing M1-M4 code. | |
+| Partial failure. | BLOCKED | Missing M1-M4 code. | |
+| Verification mismatch. | BLOCKED | Missing M1-M4 code. | |
+| Rollback/recovery without overwriting later owner edits. | BLOCKED | Missing M1-M4 code. | |
+
+**Unverified checks:** All M5 checks.
+**Failures fixed in this run:** None.
+**Remaining blockers:** M1, M2, M3, M4 must be completed before M5 can be started.
+**Milestone gate:** BLOCKED

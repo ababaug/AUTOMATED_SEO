@@ -34,6 +34,38 @@ The format is milestone-oriented so Google Jules or another coding agent can app
 
 ---
 
+## [2026-10-01] — M5 — Approved publishing
+
+### Added
+- Added decision D-020: Selected WordPress Yoast SEO meta description (`yoast_wpseo_metadesc`) as the initial publishing operation.
+- Added decision D-021: Implementation of M5 is BLOCKED due to missing M1-M4 code (Next.js application, DB, Auth, Integrations).
+- Added M5 publishing approval workflow threats to the initial threat model in `SECURITY.md`.
+- Added Test Run entry for M5 in `TEST_RESULTS.md`, recording M4 prerequisite as FAIL and M5 as BLOCKED.
+- Updated `ROADMAP.md` to reflect M5 as the current milestone, Phase 5 as the current phase, and status as BLOCKED.
+
+### Changed
+- None.
+
+### Fixed
+- None.
+
+### Security
+- Added M5 threats (Malicious CMS edit injection, race conditions on publish, unapproved publishing) and unverified controls.
+
+### Tests
+- M4 prerequisite verified as FAIL.
+- M5 staging suite marked as BLOCKED since the application does not exist.
+
+### Known limitations
+- M5 code cannot be written until M1-M4 are completed, per the operating rule "Verify prerequisites and existing work before changing code".
+
+### Gate
+- **BLOCKED**
+- Reason: The Next.js app and required infrastructure from M1-M4 are not present in the repository.
+- Next milestone: phase/06-billing (Recommended by user, though M1 is conceptually next to build the app).
+
+---
+
 ## [2026-10-01] — M0 — Define product validation and architecture
 
 ### Added

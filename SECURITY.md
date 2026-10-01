@@ -39,6 +39,9 @@
 | Supply-chain compromise | Lockfiles, pinned dependencies where appropriate, dependency/license/secret scans | UNVERIFIED |
 | Unauthorized admin access | Least privilege, MFA, time-limited audited support access | UNVERIFIED |
 | CSRF/unwanted state change | Framework-appropriate CSRF/origin/session protections | UNVERIFIED |
+| Malicious CMS edit injection (M5) | Restrict changes to known metadata fields; strict plain-text validation | BLOCKED (M5) |
+| Race conditions on publish (M5) | Pre-publish snapshot validation; fail if target diverges from approved base | BLOCKED (M5) |
+| Unapproved publishing (M5) | Bind approvals to exact hash, user, timestamp, target, and operation | BLOCKED (M5) |
 
 ## Crawler security requirements
 
