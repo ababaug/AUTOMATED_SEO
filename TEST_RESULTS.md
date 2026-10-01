@@ -2,8 +2,8 @@
 
 This file records tests that were actually run. Do not mark planned tests as passed. Never fabricate test output.
 
-**Current milestone:** M0  
-**Overall gate:** PASS
+**Current milestone:** M4
+**Overall gate:** BLOCKED
 
 ## Result vocabulary
 
@@ -132,3 +132,22 @@ This file records tests that were actually run. Do not mark planned tests as pas
 **Failures fixed in this run:**  
 **Remaining blockers:**  
 **Milestone gate:** PASS / FAIL / BLOCKED
+
+---
+
+## Test Run 2026-10-01 / Milestone M4
+
+**Environment:** Pre-implementation precondition check
+**Commit:** N/A
+**Runner:** Jules
+**Scope:** M4 Prerequisites
+
+| Test | Result | Evidence | Issue/follow-up |
+|---|---|---|---|
+| Verify M3 is PASS and accepted on main | FAIL | `git log --oneline main` shows only M0 commits. `ROADMAP.md` on main indicates M0 is the only passed milestone. | Implement M1, M2, and M3 sequentially. |
+| Verify Google API docs | PASS | Executed script checking developers.google.com URLs for Search Console and Business Profile; all returned 200 OK. | None. |
+
+**Unverified checks:** All M4 integration suite tests (OAuth, metrics, etc.) are unverified due to the blocker.
+**Failures fixed in this run:** None.
+**Remaining blockers:** Missing implementations and passed exit gates for milestones M1, M2, and M3.
+**Milestone gate:** BLOCKED

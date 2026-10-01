@@ -178,3 +178,23 @@ This file records architectural and product decisions. Do not silently turn assu
 **Premium Hypothesis:** $149/mo for 1 business site and 1 location with capped pages/audits.
 **Reason/evidence:** Sets clear measurable bounds for the free pilot to ensure cost control and clear success/failure metrics.
 **Follow-up/reversal condition:** Adjust premium hypothesis if customer interviews show lower/higher willingness to pay.
+
+## D-020 — Verification of M4 Prerequisites
+
+**Status:** ACCEPTED
+**Date:** 2026-10-01
+**Milestone:** M4
+**Decision:** Halt M4 development. The milestone is currently blocked because preconditions are not met. The prompt dictates: "Verify M3 is PASS and accepted on main." Investigation shows that main only contains M0 (validation). Missing implementation of M1, M2, and M3.
+**Reason/evidence:** Operating rules specify "Do not begin the next milestone until the current exit gate passes" and "Verify prerequisites and existing work before changing code." Main branch commit log and ROADMAP.md show only M0 has been passed.
+**Security/privacy impact:** Proceeding without foundational security controls (M1 auth/tenant isolation) is unsafe.
+**Cost/operational impact:** None.
+**Follow-up/reversal condition:** Resume M4 only after M1, M2, and M3 are fully implemented, tested, and passing their respective gates on main.
+
+## D-021 — Google API Documentation Verification
+
+**Status:** ACCEPTED
+**Date:** 2026-10-01
+**Milestone:** M4
+**Decision:** Google API documentation for Search Console, Business Profile, and OAuth was successfully verified as available and active on this date.
+**Reason/evidence:** Verified via automated script against `developers.google.com/webmaster-tools/v1/searchanalytics/query`, `developers.google.com/my-business/reference/rest`, and `developers.google.com/identity/protocols/oauth2`.
+**External source and verification date:** `developers.google.com`, verified on 2026-10-01.
