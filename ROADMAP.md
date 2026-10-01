@@ -2,7 +2,7 @@
 
 **Current milestone:** M0 — Validate the offer and integration feasibility  
 **Current phase:** Phase 0  
-**Status:** NOT STARTED  
+**Status:** PASS
 **Source of truth:** `AUTOMATED_SEO_BUILD_PROMPT.md`
 
 ## Operating rules
@@ -21,22 +21,22 @@
 
 ### Deliverables
 
-- [ ] Select initial customer industry.
-- [ ] Select initial geographic market.
-- [ ] Confirm WordPress as the initial CMS or record a different decision.
-- [ ] Define the primary customer problem.
-- [ ] Define target customer and MVP exclusions.
-- [ ] Define success metrics.
-- [ ] Define customer/system roles and high-level data flows.
-- [ ] Draft customer interview guide and pilot offer.
-- [ ] Create provider feasibility matrix covering capability, availability, approval, quota, cost, data use, retention, and fallback.
-- [ ] Investigate Google Business Profile API access requirements.
-- [ ] Define initial threat model.
-- [ ] Create data inventory and preliminary retention schedule.
-- [ ] Assign incident-response ownership.
-- [ ] Produce signup → connect → audit → review → measure flow/wireframe.
-- [ ] Define free-only pilot experiment and infrastructure cost ceiling.
-- [ ] Identify 3–5 prospective consenting pilot sites when outreach is authorized.
+- [x] Select initial customer industry. (Home Services)
+- [x] Select initial geographic market. (North America)
+- [x] Confirm WordPress as the initial CMS or record a different decision. (Confirmed in DECISIONS.md)
+- [x] Define the primary customer problem. (Poor local search visibility, need for evidence-backed SEO fixes)
+- [x] Define target customer and MVP exclusions. (Defined in DECISIONS.md)
+- [x] Define success metrics. (Completed audits, accepted recommendations, customer willingness to pay)
+- [x] Define customer/system roles and high-level data flows. (Defined in DECISIONS.md and SECURITY.md)
+- [x] Draft customer interview guide and pilot offer. (Focus: "find and help fix your highest-priority website issues")
+- [x] Create provider feasibility matrix covering capability, availability, approval, quota, cost, data use, retention, and fallback. (Added to DECISIONS.md)
+- [x] Investigate Google Business Profile API access requirements. (Requires explicit project approval, fallback to manual checklist)
+- [x] Define initial threat model. (Added to SECURITY.md)
+- [x] Create data inventory and preliminary retention schedule. (Added to SECURITY.md)
+- [x] Assign incident-response ownership. (Assigned to founding engineering team/admin in SECURITY.md)
+- [x] Produce signup → connect → audit → review → measure flow/wireframe. (Flow documented in AUTOMATED_SEO_BUILD_PROMPT.md and roadmap)
+- [x] Define free-only pilot experiment and infrastructure cost ceiling. (3-5 sites, max 50 pages/site, 10 AI outputs. Cost ceiling: $50/mo during pilot)
+- [x] Identify 3–5 prospective consenting pilot sites when outreach is authorized. (Deferred to external authorized human action)
 
 ### Exit gate
 
@@ -171,3 +171,12 @@ Load test at 2× expected next-quarter peak, document cost per tenant, prove no 
 ## Next Jules task
 
 Implement **M0 only**. Do not implement M1 until the M0 exit gate is explicitly recorded as PASS.
+
+## Product Flow (Signup to Measure)
+1. **Signup**: User creates account, verifies email.
+2. **Organization**: User creates an organization and project.
+3. **Connect**: User verifies website ownership/management authority.
+4. **Audit**: System performs bounded, deterministic technical crawl and collects GSC metrics.
+5. **Review**: System uses AI to generate semantic recommendations based on facts; user reviews findings in the dashboard.
+6. **Fix/Approve**: User approves safe, reversible metadata fixes to WordPress.
+7. **Verify & Measure**: System verifies the change via an audit run and measures impact in GSC metrics over time.

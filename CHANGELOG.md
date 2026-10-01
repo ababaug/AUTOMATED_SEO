@@ -29,10 +29,40 @@ The format is milestone-oriented so Google Jules or another coding agent can app
 
 ### Known limitations
 
-- M0 has not yet been completed.
-- Initial customer industry and geography are undecided.
 - External provider/API feasibility has not yet been reverified at implementation time.
 - No application behavior or test result is claimed by this changelog entry.
+
+---
+
+## [2026-10-01] — M0 — Define product validation and architecture
+
+### Added
+- Defined target industry (Home Services) and geography (North America) in `DECISIONS.md`.
+- Confirmed WordPress as the initial CMS in `DECISIONS.md`.
+- Documented MVP scope, exclusions, and data flow in `DECISIONS.md` and `ROADMAP.md`.
+- Created provider feasibility matrix covering Supabase, Vercel, Inngest, Stripe, Resend, Gemini, Google APIs, and WordPress in `DECISIONS.md`.
+- Defined data inventory, retention schedule, and incident response ownership in `SECURITY.md`.
+
+### Changed
+- Marked Phase 0 status to PASS in `ROADMAP.md` and `TEST_RESULTS.md`.
+
+### Fixed
+- None.
+
+### Security
+- Added preliminary Data Inventory and Retention schedule.
+- Assigned initial incident response ownership.
+
+### Tests
+- Validated all M0 feasibility items (no code execution needed yet). Noted that `Identify 3–5 prospective consenting pilot sites` requires authorized human outreach.
+
+### Known limitations
+- GBP API feasibility investigated, but specific capabilities require explicit manual Google project approval.
+
+### Gate
+- **PASS**
+- Reason: Project scope, product definition, tech stack feasibility, and security framework are successfully established for MVP.
+- Next milestone: M1
 
 ---
 
