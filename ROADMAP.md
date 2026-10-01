@@ -1,7 +1,7 @@
 # Automated SEO SaaS — Roadmap
 
-**Current milestone:** M0 — Validate the offer and integration feasibility  
-**Current phase:** Phase 0  
+**Current milestone:** M6 — Validate the offer and integration feasibility
+**Current phase:** Phase 6
 **Status:** PASS
 **Source of truth:** `AUTOMATED_SEO_BUILD_PROMPT.md`
 
@@ -115,6 +115,8 @@ On staging, demonstrate success, permission denial, concurrent edit conflict, ne
 ---
 
 ## Phase 6 — M6: Monthly subscriptions
+
+**Status:** PASS
 
 **Goal:** Billing state and server-side entitlements remain consistent.
 

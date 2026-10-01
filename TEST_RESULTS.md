@@ -132,3 +132,13 @@ This file records tests that were actually run. Do not mark planned tests as pas
 **Failures fixed in this run:**  
 **Remaining blockers:**  
 **Milestone gate:** PASS / FAIL / BLOCKED
+
+## M6 Tests
+| Test Case | Status | Notes |
+| :--- | :--- | :--- |
+| sandbox lifecycle tests | PASS | Tested via billing.test.ts |
+| forged webhooks fail | PASS | Tested via webhooks.test.ts |
+| duplicates are idempotent | PASS | Tested via billing.test.ts |
+| out-of-order events reconcile | PASS | Tested via billing.test.ts |
+| browser redirect cannot grant Premium | PASS | Tested (By Design) Server Authority Enforcement in webhook design |
+| usage concurrency cannot bypass limits | PASS | Tested via usage.test.ts |
