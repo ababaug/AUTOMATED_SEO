@@ -1,7 +1,8 @@
 # Automated SEO SaaS — Security Plan
 
 **Security status:** Threat model defined (M0). Controls are requirements until verified by tests.
-**Current milestone:** M0
+**Current milestone:** M7
+**Gate Status:** BLOCKED (M6 preconditions not met)
 
 ## Security principles
 
@@ -151,3 +152,14 @@ A milestone cannot be marked PASS when a required security dependency for that m
 | Concurrent Edits | Hash checking before apply | UNVERIFIED |
 | Data Loss | Supabase automated backups | UNVERIFIED |
 | Admin Access | Separate role, no customer impersonation without consent | UNVERIFIED |
+
+## Incident Response Playbook
+
+1. **Detection:** Alerts on high error rates, anomalous usage, database load, payment webhook failures, or unusual concurrent edits.
+2. **Triage:** Assess severity based on scope (single tenant vs. global) and data exposure (performance vs. unauthorized access). Open an incident ticket.
+3. **Containment:** If active exploitation is observed, revoke the affected OAuth tokens, lock the affected user account, or isolate the affected worker. If severe, temporarily pause the background queue or publishing pipeline.
+4. **Credential revocation:** Rotate any suspected leaked server-side secrets, provider API keys, or database passwords immediately.
+5. **Customer impact assessment:** Query logs and the change-set audit trail to identify exactly which organizations, projects, and users were affected, and what operations were performed.
+6. **Recovery:** Restore from an isolated backup if data loss/corruption occurred, taking care not to overwrite subsequent valid owner edits without manual review. Redeploy known-good application state.
+7. **Communications ownership:** The lead developer (or assigned on-call) notifies affected customers within 24 hours of confirming a breach impacting their data, providing facts, not speculation.
+8. **Post-incident review:** Document the timeline, root cause, and follow-up actions (new automated tests, logging, or architecture changes) in `DECISIONS.md`. No blame.

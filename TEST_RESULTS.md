@@ -2,8 +2,8 @@
 
 This file records tests that were actually run. Do not mark planned tests as passed. Never fabricate test output.
 
-**Current milestone:** M0  
-**Overall gate:** PASS
+**Current milestone:** M7
+**Overall gate:** BLOCKED
 
 ## Result vocabulary
 
@@ -132,3 +132,36 @@ This file records tests that were actually run. Do not mark planned tests as pas
 **Failures fixed in this run:**  
 **Remaining blockers:**  
 **Milestone gate:** PASS / FAIL / BLOCKED
+
+---
+
+## M7 — Pilot and Hardening
+
+| Check | Expected evidence | Result | Evidence/notes |
+|---|---|---|---|
+| M6 is PASS and accepted on main | Verification of M6 codebase and pipeline | FAIL | Source codebase is at M0 |
+| Completed audits tracked | Metrics implementation | BLOCKED | Awaiting M1-M6 codebase |
+| Audit processing time tracked | Metrics implementation | BLOCKED | Awaiting M1-M6 codebase |
+| Cost per audit tracked | Metrics implementation | BLOCKED | Awaiting M1-M6 codebase |
+| Security testing run | Staging/local tests | BLOCKED | Awaiting M1-M6 codebase |
+| High/critical findings resolved | Zero remaining | BLOCKED | Awaiting M1-M6 codebase |
+| Isolated restore exercise | Backup verification | BLOCKED | Infrastructure not deployed |
+| Minimum support diagnostics | Tooling implementation | BLOCKED | Awaiting M1-M6 codebase |
+| Approved changes audit trace | Tooling implementation | BLOCKED | Awaiting M1-M6 codebase |
+| Real-world evidence collected | Customer usage/feedback | BLOCKED | Pilot not yet launched |
+
+### Test Run 2026-10-01 / Milestone M7
+
+**Environment:** local
+**Commit:** N/A (M0 codebase)
+**Runner:** Jules
+**Scope:** M7 Pilot Readiness Verification
+
+| Test | Result | Evidence | Issue/follow-up |
+|---|---|---|---|
+| Verify M6 is PASS | FAIL | `git log` shows M0 only | M1-M6 must be completed first |
+
+**Unverified checks:** All M7 metrics, security, backup, and support checks.
+**Failures fixed in this run:** None.
+**Remaining blockers:** M1, M2, M3, M4, M5, M6 functionality.
+**Milestone gate:** BLOCKED

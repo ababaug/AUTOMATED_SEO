@@ -178,3 +178,15 @@ This file records architectural and product decisions. Do not silently turn assu
 **Premium Hypothesis:** $149/mo for 1 business site and 1 location with capped pages/audits.
 **Reason/evidence:** Sets clear measurable bounds for the free pilot to ensure cost control and clear success/failure metrics.
 **Follow-up/reversal condition:** Adjust premium hypothesis if customer interviews show lower/higher willingness to pay.
+
+## D-020 — Block M7 until previous milestones are implemented
+
+**Status:** ACCEPTED
+**Date:** $(date +%Y-%m-%d)
+**Milestone:** M7
+**Decision:** Halt execution of M7 (Controlled pilot and hardening) because the codebase is currently at M0 (Phase 0). M1 through M6 must be implemented first.
+**Reason/evidence:** The project requirements strictly enforce working one milestone at a time and not fabricating test results or code. Since M6 is not PASS, M7 preconditions fail.
+**Alternatives considered:** Faking test results (rejected due to explicit instructions not to fabricate evidence).
+**Security/privacy impact:** Preserves accurate tracking of system state.
+**Cost/operational impact:** None.
+**Follow-up/reversal condition:** Resume M7 once M6 passes its exit gate.

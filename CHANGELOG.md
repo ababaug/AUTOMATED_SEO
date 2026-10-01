@@ -92,3 +92,12 @@ The format is milestone-oriented so Google Jules or another coding agent can app
 - **PASS / FAIL / BLOCKED**
 - Reason:
 - Next milestone:
+
+## [Phase 7] - M7 Controlled Pilot and Hardening (BLOCKED)
+
+### Added
+- Added Incident Response Playbook to `SECURITY.md`.
+- Drafted M7 requirements in `TEST_RESULTS.md` and `DECISIONS.md`.
+
+### Blocked
+- M7 implementation is blocked. Precondition "Verify M6 is PASS and accepted on main" failed because the codebase is currently at M0. M1-M6 must be completed first.
