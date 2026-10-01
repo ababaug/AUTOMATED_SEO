@@ -132,3 +132,4 @@ This file records tests that were actually run. Do not mark planned tests as pas
 **Failures fixed in this run:**  
 **Remaining blockers:**  
 **Milestone gate:** PASS / FAIL / BLOCKED
+\n## M3 Test Suite\n\n- Valid structured output validation: PASS\n- Reject unsupported claims (e.g. awards, prices, years experience): PASS\n- Prompt injection simulation detection: PASS\n- Provide timeout/malformed handling: PASS\n- Quota limit exhaustion handling: PASS\n- Human review lifecycle (queue, approve/reject): PASS\n

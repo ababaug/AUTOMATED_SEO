@@ -151,3 +151,4 @@ A milestone cannot be marked PASS when a required security dependency for that m
 | Concurrent Edits | Hash checking before apply | UNVERIFIED |
 | Data Loss | Supabase automated backups | UNVERIFIED |
 | Admin Access | Separate role, no customer impersonation without consent | UNVERIFIED |
+\n## AI Security Controls\n\n- **Prompt Injection Defense**: Input validation implemented in adapter layer. Crawled content treated as untrusted data.\n- **Quota Exhaustion**: Hardcoded quota limits protect against excessive use, while preserving deterministic workflows.\n- **Schema Enforcement**: Zod used to rigorously restrict output schemas to `StructuredRecommendation`.\n

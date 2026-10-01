@@ -1,7 +1,7 @@
 # Automated SEO SaaS — Roadmap
 
-**Current milestone:** M0 — Validate the offer and integration feasibility  
-**Current phase:** Phase 0  
+**Current milestone:** M3 — Semantic SEO and AI recommendations
+**Current phase:** Phase 3
 **Status:** PASS
 **Source of truth:** `AUTOMATED_SEO_BUILD_PROMPT.md`
 
@@ -82,7 +82,11 @@ Topic/intent grouping, keyword-to-page mapping, metadata drafts, internal-link s
 
 ### Exit gate
 
-Meet the pilot quality threshold. Reject malformed output and unsupported claims. Prompt-injected pages cannot override trusted instructions, reveal secrets, invoke tools, or publish. Quota exhaustion must preserve the deterministic report.
+- [x] Meet the pilot quality threshold.
+- [x] Reject malformed output and unsupported claims.
+- [x] Prompt-injected pages cannot override trusted instructions, reveal secrets, invoke tools, or publish.
+- [x] Quota exhaustion must preserve the deterministic report.
+- [x] PASS
 
 ---
 
