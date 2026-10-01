@@ -14,7 +14,6 @@ describe('Tenant Isolation via Postgres RLS', () => {
   let client: Client
   let tenantA_id: string
   let tenantB_id: string
-  let orgA_id: string
   let orgB_id: string
 
   beforeAll(async () => {
@@ -31,8 +30,7 @@ describe('Tenant Isolation via Postgres RLS', () => {
 
     // Use Postgres set_config to simulate being Tenant A calling the create_organization RPC
     await client.query(`SELECT set_config('request.jwt.claim.sub', '${tenantA_id}', false);`)
-    const orgA = await client.query(`SELECT create_organization('Org A');`)
-    orgA_id = orgA.rows[0].create_organization
+    await client.query(`SELECT create_organization('Org A');`)
 
     // Simulate being Tenant B
     await client.query(`SELECT set_config('request.jwt.claim.sub', '${tenantB_id}', false);`)

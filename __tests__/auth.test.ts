@@ -2,7 +2,7 @@
  * Authentication Tests (M1)
  */
 import { describe, expect, it, jest } from '@jest/globals'
-import { NextRequest, NextResponse } from 'next/server'
+import { NextRequest } from 'next/server'
 import { updateSession } from '../src/utils/supabase/middleware'
 import { createServerClient } from '@supabase/ssr'
 
@@ -15,7 +15,7 @@ describe('Authentication Flow Tests via Middleware', () => {
     // Mock the Supabase client to return no user (e.g. expired or invalid session)
     ;(createServerClient as jest.Mock).mockReturnValue({
       auth: {
-        getUser: jest.fn<() => Promise<{ data: { user: any | null } }>>().mockResolvedValue({ data: { user: null } }),
+        getUser: jest.fn<() => Promise<{ data: { user: unknown | null } }>>().mockResolvedValue({ data: { user: null } }),
       },
     })
 
@@ -34,7 +34,7 @@ describe('Authentication Flow Tests via Middleware', () => {
     // Mock the Supabase client to return a valid user
     ;(createServerClient as jest.Mock).mockReturnValue({
       auth: {
-        getUser: jest.fn<() => Promise<{ data: { user: any | null } }>>().mockResolvedValue({ data: { user: { id: 'test-user' } } }),
+        getUser: jest.fn<() => Promise<{ data: { user: unknown | null } }>>().mockResolvedValue({ data: { user: { id: 'test-user' } } }),
       },
     })
 
@@ -53,7 +53,7 @@ describe('Authentication Flow Tests via Middleware', () => {
   it('Unauthenticated users can access public routes', async () => {
     ;(createServerClient as jest.Mock).mockReturnValue({
       auth: {
-        getUser: jest.fn<() => Promise<{ data: { user: any | null } }>>().mockResolvedValue({ data: { user: null } }),
+        getUser: jest.fn<() => Promise<{ data: { user: unknown | null } }>>().mockResolvedValue({ data: { user: null } }),
       },
     })
 
