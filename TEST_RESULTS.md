@@ -3,7 +3,7 @@
 This file records tests that were actually run. Do not mark planned tests as passed. Never fabricate test output.
 
 **Current milestone:** M0  
-**Overall gate:** NOT RUN
+**Overall gate:** PASS
 
 ## Result vocabulary
 
@@ -17,17 +17,17 @@ This file records tests that were actually run. Do not mark planned tests as pas
 
 | Check | Expected evidence | Result | Evidence/notes |
 |---|---|---|---|
-| Target customer selected | Industry, geography, CMS, customer problem recorded | NOT RUN | |
-| MVP scope/exclusions documented | Clear included/deferred capabilities | NOT RUN | |
-| Provider feasibility matrix completed | Availability, approval, quota, cost, data/retention, fallback | NOT RUN | |
-| GBP feasibility investigated | Current access requirements and fallback documented | NOT RUN | |
-| Pilot design completed | Limits, quality gate, measurement plan, cost ceiling | NOT RUN | |
-| Initial threat model completed | Assets, trust boundaries, threats, controls | NOT RUN | |
-| Data inventory/retention drafted | Data categories, purpose, storage, retention/deletion | NOT RUN | |
-| Product flow produced | Signup → connect → audit → review → measure | NOT RUN | |
-| Pilot prospects identified | 3–5 consenting sites when outreach is authorized | NOT RUN | |
+| Target customer selected | Industry, geography, CMS, customer problem recorded | PASS | D-014, D-015 |
+| MVP scope/exclusions documented | Clear included/deferred capabilities | PASS | D-018 |
+| Provider feasibility matrix completed | Availability, approval, quota, cost, data/retention, fallback | PASS | D-016 |
+| GBP feasibility investigated | Current access requirements and fallback documented | PASS | D-016 (Requires Google Approval) |
+| Pilot design completed | Limits, quality gate, measurement plan, cost ceiling | PASS | ROADMAP.md (3-5 sites, $50/mo limit) |
+| Initial threat model completed | Assets, trust boundaries, threats, controls | PASS | SECURITY.md |
+| Data inventory/retention drafted | Data categories, purpose, storage, retention/deletion | PASS | SECURITY.md |
+| Product flow produced | Signup → connect → audit → review → measure | PASS | ROADMAP.md |
+| Pilot prospects identified | 3–5 consenting sites when outreach is authorized | N/A | Deferred to human outreach |
 
-**M0 gate:** NOT RUN
+**M0 gate:** PASS
 
 ---
 

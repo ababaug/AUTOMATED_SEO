@@ -1,6 +1,6 @@
 # Automated SEO SaaS — Security Plan
 
-**Security status:** Initial threat model; controls are requirements until verified by tests.  
+**Security status:** Threat model defined (M0). Controls are requirements until verified by tests.
 **Current milestone:** M0
 
 ## Security principles
@@ -97,7 +97,19 @@ Before applying a change:
 
 ## Data and retention
 
-M0 must produce a data inventory and retention schedule. Google-sourced content must be separately governed according to the applicable current API policies. Do not assume externally sourced data can be retained indefinitely.
+### Data Inventory
+
+1. **User Identity & Auth Data:** (Supabase Auth) Stored securely, retained until account deletion.
+2. **Organization & Project Metadata:** Retained while subscription/trial is active.
+3. **Crawl Observations & Audit Runs:** Retained for 90 days to allow historical comparison.
+4. **AI Output & Recommendations:** Retained for 90 days or until explicitly approved and applied.
+5. **Applied Fixes / Change Sets:** Retained indefinitely to maintain audit trail of changes.
+6. **Billing & Usage Records:** (Stripe) Retained for 7 years for tax/compliance purposes.
+7. **Google-sourced Content (GSC/GBP):** (Temporary cache) Retained max 30 days or as per Google API policy. Removed on project disconnect/revocation.
+
+### Incident Response Ownership
+
+Initial incident response ownership is assigned to the Founding Engineering Team / Lead Developer. Roles will expand to a dedicated on-call rotation as the SaaS scales to production (M8/M9).
 
 ## Release security gate
 
@@ -117,3 +129,25 @@ A milestone cannot be marked PASS when a required security dependency for that m
 **Regression test:**  
 **Verification result:**  
 **Remaining risk:**
+
+## Detailed Initial Threat Model (M0)
+
+| Threat | Required Control | Verification State |
+|---|---|---|
+| Tenant Isolation | RLS in Supabase, tenant-scoped DB queries | UNVERIFIED |
+| Account Takeover | Email verification, rate limiting | UNVERIFIED |
+| OAuth Mix-ups | State binding, strict callback URLs | UNVERIFIED |
+| SSRF | Network policy restrictions, IP validation | UNVERIFIED |
+| DNS Rebinding | Resolve securely at connection time | UNVERIFIED |
+| Crawler Exhaustion | Strict timeouts, page budget, depth limit | UNVERIFIED |
+| Prompt Injection | Output parsing schemas, restricted context | UNVERIFIED |
+| Stored XSS | React escaping, restricted HTML sanitizer | UNVERIFIED |
+| SQL/Command Injection | Postgres parameterized queries via ORM/SDK | UNVERIFIED |
+| Secrets Leakage | Environment variables only, no hardcoded keys | UNVERIFIED |
+| Payment Replay | Stripe webhook signature verification | UNVERIFIED |
+| Usage Bypass | Server-authoritative entitlement checking | UNVERIFIED |
+| Duplicate Jobs | Idempotency keys on Inngest | UNVERIFIED |
+| Publishing Authorization | Explicit project matching on target URL | UNVERIFIED |
+| Concurrent Edits | Hash checking before apply | UNVERIFIED |
+| Data Loss | Supabase automated backups | UNVERIFIED |
+| Admin Access | Separate role, no customer impersonation without consent | UNVERIFIED |
