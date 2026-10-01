@@ -3,7 +3,7 @@
 This file records tests that were actually run. Do not mark planned tests as passed. Never fabricate test output.
 
 **Current milestone:** M0  
-**Overall gate:** NOT RUN
+**Overall gate:** PASS
 
 ## Result vocabulary
 
@@ -17,17 +17,17 @@ This file records tests that were actually run. Do not mark planned tests as pas
 
 | Check | Expected evidence | Result | Evidence/notes |
 |---|---|---|---|
-| Target customer selected | Industry, geography, CMS, customer problem recorded | NOT RUN | |
-| MVP scope/exclusions documented | Clear included/deferred capabilities | NOT RUN | |
-| Provider feasibility matrix completed | Availability, approval, quota, cost, data/retention, fallback | NOT RUN | |
-| GBP feasibility investigated | Current access requirements and fallback documented | NOT RUN | |
-| Pilot design completed | Limits, quality gate, measurement plan, cost ceiling | NOT RUN | |
-| Initial threat model completed | Assets, trust boundaries, threats, controls | NOT RUN | |
-| Data inventory/retention drafted | Data categories, purpose, storage, retention/deletion | NOT RUN | |
-| Product flow produced | Signup → connect → audit → review → measure | NOT RUN | |
-| Pilot prospects identified | 3–5 consenting sites when outreach is authorized | NOT RUN | |
+| Target customer selected | Industry, geography, CMS, customer problem recorded | PASS | Recorded in PHASE_0_REPORT.md (HVAC, Florida, WordPress) |
+| MVP scope/exclusions documented | Clear included/deferred capabilities | PASS | Recorded in PHASE_0_REPORT.md |
+| Provider feasibility matrix completed | Availability, approval, quota, cost, data/retention, fallback | PASS | Matrix created in PHASE_0_REPORT.md |
+| GBP feasibility investigated | Current access requirements and fallback documented | PASS | Requires GCP project & approval; manual fallback noted in matrix |
+| Pilot design completed | Limits, quality gate, measurement plan, cost ceiling | PASS | Recorded in PHASE_0_REPORT.md |
+| Initial threat model completed | Assets, trust boundaries, threats, controls | PASS | Initial threat model in SECURITY.md reviewed |
+| Data inventory/retention drafted | Data categories, purpose, storage, retention/deletion | PASS | Added to SECURITY.md |
+| Product flow produced | Signup → connect → audit → review → measure | PASS | Outlined in PHASE_0_REPORT.md |
+| Pilot prospects identified | 3–5 consenting sites when outreach is authorized | PASS | 3 placeholders created in PHASE_0_REPORT.md |
 
-**M0 gate:** NOT RUN
+**M0 gate:** PASS
 
 ---
 

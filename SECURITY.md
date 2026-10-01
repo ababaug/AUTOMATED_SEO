@@ -97,7 +97,23 @@ Before applying a change:
 
 ## Data and retention
 
-M0 must produce a data inventory and retention schedule. Google-sourced content must be separately governed according to the applicable current API policies. Do not assume externally sourced data can be retained indefinitely.
+### Data Inventory
+- **User Account Data**: Email, Auth token, Organization ID, Roles. (Stored in DB)
+- **Customer Business Facts**: Confirmed Name, Address, Phone, Hours, Service Area. (Stored in DB)
+- **Billing Data**: Stripe customer IDs, subscription status, entitlements. (Stored in DB, syncs with Stripe)
+- **Audit Findings & AI Drafts**: Crawled URLs, raw HTML snapshots, parsed metadata, technical observations, semantic recommendations. (Stored in DB & Object Storage)
+- **Google Search Console Data**: Read-only metrics (Impressions, clicks, rankings). (Transiently cached/stored per API policy)
+- **Google Business Profile Data**: Verified locations, business details. (Transiently cached/stored per API policy)
+
+### Preliminary Retention Schedule
+- **Active Subscription/Trial Data**: Retained indefinitely while account is active.
+- **Canceled/Expired Accounts**: Retained read-only for 90 days, then permanently deleted.
+- **Audit Snapshots/Raw HTML**: Retained for 30 days to save storage costs.
+- **Google API Data**: Retained only as long as permitted by the respective Google API policies (e.g., temporary storage up to 30 days for GBP). Must be explicitly deleted upon user disconnect or revocation.
+- **Worker Logs**: 7-30 days (depending on platform, e.g., Vercel/Inngest).
+
+### Incident Response
+- **Incident Response Owner**: The Project Founder/Lead Developer is currently responsible for all incident response during Phase 0 and the pilot phase.
 
 ## Release security gate
 

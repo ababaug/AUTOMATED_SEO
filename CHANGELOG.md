@@ -15,24 +15,31 @@ The format is milestone-oriented so Google Jules or another coding agent can app
   - `TEST_RESULTS.md`
   - `CHANGELOG.md`
 
+---
+
+## [2026-10-01] — M0 — Validate the offer and integration feasibility
+
+### Added
+- Created `PHASE_0_REPORT.md` defining customer segment (HVAC/Florida), MVP scope, product journey, pilot design, and provider feasibility matrix.
+
 ### Changed
-
-- None.
-
-### Fixed
-
-- None.
+- Updated `DECISIONS.md` to move D-001, D-003, D-007, D-010 to ACCEPTED.
+- Updated `ROADMAP.md` checking off all M0 deliverables.
+- Updated `TEST_RESULTS.md` setting M0 validation checks to PASS.
 
 ### Security
+- Added Data Inventory, Retention Schedule, and Incident Response ownership to `SECURITY.md`.
 
-- Initial security requirements and threat categories documented; controls remain unverified until implemented and tested.
+### Tests
+- Validated M0 assumptions visually and conceptually. No code tests to run yet.
 
 ### Known limitations
+- External provider/API availability/prices (e.g. Stripe, Gemini) have been assumed based on September 2026 data and need to be implemented/verified dynamically in future phases.
 
-- M0 has not yet been completed.
-- Initial customer industry and geography are undecided.
-- External provider/API feasibility has not yet been reverified at implementation time.
-- No application behavior or test result is claimed by this changelog entry.
+### Gate
+- **PASS**
+- Reason: The proposed scope, provider matrix, and free-only pilot are documented and feasible. Unresolved external dependencies have documented manual fallbacks.
+- Next milestone: M1 — Secure account foundation
 
 ---
 

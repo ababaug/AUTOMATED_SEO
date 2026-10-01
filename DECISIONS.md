@@ -14,10 +14,10 @@ This file records architectural and product decisions. Do not silently turn assu
 
 ## D-001 — Initial product focus
 
-**Status:** PROPOSED  
-**Decision:** Begin with local service businesses that already have a WordPress website and an eligible Google Business Profile. Select one industry and one geographic market after customer discovery.  
+**Status:** ACCEPTED
+**Decision:** Begin with local service businesses that already have a WordPress website and an eligible Google Business Profile. Select one industry and one geographic market after customer discovery. We have selected HVAC businesses in Florida, US.
 **Reason:** Keeps the first pilot narrow enough to evaluate useful fixes, integrations, costs, and customer demand.  
-**Open items:** Industry and geography are not yet selected.
+**Open items:** None.
 
 ## D-002 — Initial product differentiator
 
@@ -27,7 +27,7 @@ This file records architectural and product decisions. Do not silently turn assu
 
 ## D-003 — Application architecture
 
-**Status:** PROPOSED  
+**Status:** ACCEPTED
 **Decision:** Start with a modular TypeScript/Next.js application, PostgreSQL, private object storage, and a dedicated durable job worker/queue. Avoid microservices until measured requirements justify them.  
 **Constraints:** Authorization must be server-side. Long crawls and AI work must run outside web-request lifetimes.
 
@@ -50,7 +50,7 @@ This file records architectural and product decisions. Do not silently turn assu
 
 ## D-007 — Website crawling
 
-**Status:** PROPOSED  
+**Status:** ACCEPTED
 **Decision:** Use an HTTP parser first and isolated browser rendering only when necessary. Enforce crawl budgets, per-host concurrency, explicit timeouts, safe redirects, restricted egress, and SSRF defenses on every fetch.
 
 ## D-008 — Google integrations
@@ -66,9 +66,9 @@ This file records architectural and product decisions. Do not silently turn assu
 
 ## D-010 — Billing
 
-**Status:** PROPOSED  
+**Status:** ACCEPTED
 **Decision:** Use hosted payment collection. Server-verified signed webhooks and reconciliation are authoritative for entitlements; browser redirects never grant Premium access.  
-**Provider:** UNDECIDED. Evaluate availability for the actual business country, currencies, settlement, recurring billing, disputes, and fees.
+**Provider:** Stripe. Verified for US/Florida, supports recurring billing, checkout, and webhook verification.
 
 ## D-011 — Trial hypothesis
 

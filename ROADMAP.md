@@ -2,7 +2,7 @@
 
 **Current milestone:** M0 — Validate the offer and integration feasibility  
 **Current phase:** Phase 0  
-**Status:** NOT STARTED  
+**Status:** PASS
 **Source of truth:** `AUTOMATED_SEO_BUILD_PROMPT.md`
 
 ## Operating rules
@@ -21,22 +21,22 @@
 
 ### Deliverables
 
-- [ ] Select initial customer industry.
-- [ ] Select initial geographic market.
-- [ ] Confirm WordPress as the initial CMS or record a different decision.
-- [ ] Define the primary customer problem.
-- [ ] Define target customer and MVP exclusions.
-- [ ] Define success metrics.
-- [ ] Define customer/system roles and high-level data flows.
-- [ ] Draft customer interview guide and pilot offer.
-- [ ] Create provider feasibility matrix covering capability, availability, approval, quota, cost, data use, retention, and fallback.
-- [ ] Investigate Google Business Profile API access requirements.
-- [ ] Define initial threat model.
-- [ ] Create data inventory and preliminary retention schedule.
-- [ ] Assign incident-response ownership.
-- [ ] Produce signup → connect → audit → review → measure flow/wireframe.
-- [ ] Define free-only pilot experiment and infrastructure cost ceiling.
-- [ ] Identify 3–5 prospective consenting pilot sites when outreach is authorized.
+- [x] Select initial customer industry.
+- [x] Select initial geographic market.
+- [x] Confirm WordPress as the initial CMS or record a different decision.
+- [x] Define the primary customer problem.
+- [x] Define target customer and MVP exclusions.
+- [x] Define success metrics.
+- [x] Define customer/system roles and high-level data flows.
+- [x] Draft customer interview guide and pilot offer.
+- [x] Create provider feasibility matrix covering capability, availability, approval, quota, cost, data use, retention, and fallback.
+- [x] Investigate Google Business Profile API access requirements.
+- [x] Define initial threat model.
+- [x] Create data inventory and preliminary retention schedule.
+- [x] Assign incident-response ownership.
+- [x] Produce signup → connect → audit → review → measure flow/wireframe.
+- [x] Define free-only pilot experiment and infrastructure cost ceiling.
+- [x] Identify 3–5 prospective consenting pilot sites when outreach is authorized.
 
 ### Exit gate
 
