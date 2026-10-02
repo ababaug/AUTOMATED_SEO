@@ -2,8 +2,8 @@
 
 This file records tests that were actually run. Do not mark planned tests as passed. Never fabricate test output.
 
-**Current milestone:** M0  
-**Overall gate:** PASS
+**Current milestone:** M9
+**Overall gate:** BLOCKED
 
 ## Result vocabulary
 
@@ -132,3 +132,19 @@ This file records tests that were actually run. Do not mark planned tests as pas
 **Failures fixed in this run:**  
 **Remaining blockers:**  
 **Milestone gate:** PASS / FAIL / BLOCKED
+
+---
+
+## M9 — Scale validated usage
+
+| Check | Expected evidence | Result | Evidence/notes |
+|---|---|---|---|
+| Analyze crawler usage/bottlenecks | Measured evidence of capacity needs | BLOCKED | No production app to measure. |
+| Test expected next-quarter peak | 2x load test | BLOCKED | Cannot load test non-existent application. |
+| Queue fairness verified | No single tenant monopolizes workers | BLOCKED | No queue/worker system running. |
+| Tenant isolation intact | Tests pass under load | BLOCKED | No application tests available. |
+| Determine cost per tenant | Accurate cost estimates or logs | BLOCKED | No infrastructure metrics available. |
+| Ensure backup/recovery readiness | Restore exercise successful | BLOCKED | No database to back up. |
+| Scale features | Based on customer demand | BLOCKED | No customer demand to validate scaling. |
+
+**M9 gate:** BLOCKED
