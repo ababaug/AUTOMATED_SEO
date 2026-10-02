@@ -1,7 +1,8 @@
 # Automated SEO SaaS — Security Plan
 
 **Security status:** Threat model defined (M0). Controls are requirements until verified by tests.
-**Current milestone:** M0
+**Current milestone:** M7
+**Gate Status:** BLOCKED (M6 preconditions not met)
 
 ## Security principles
 
@@ -151,3 +152,9 @@ A milestone cannot be marked PASS when a required security dependency for that m
 | Concurrent Edits | Hash checking before apply | UNVERIFIED |
 | Data Loss | Supabase automated backups | UNVERIFIED |
 | Admin Access | Separate role, no customer impersonation without consent | UNVERIFIED |
+
+## Billing Security (M6)
+- Implemented robust signature verification for all Stripe webhooks.
+- Events are logged in `eventLedger` with idempotency checks to prevent duplicate processing.
+- Concurrent usage requests are met with atomic bounds checks to prevent double usage and quota bypassing.
+- A successful browser redirect (client-side) never grants Premium access; entitlements derive strictly from server-verified webhook events.

@@ -179,13 +179,11 @@ This file records architectural and product decisions. Do not silently turn assu
 **Reason/evidence:** Sets clear measurable bounds for the free pilot to ensure cost control and clear success/failure metrics.
 **Follow-up/reversal condition:** Adjust premium hypothesis if customer interviews show lower/higher willingness to pay.
 
-## D-020 — Defer Scaling until Production Measurement
+## D-020 — Selected Payment Provider
 
 **Status:** ACCEPTED
 **Date:** 2026-10-01
-**Milestone:** M9
-**Decision:** All technical scaling and architecture expansion (M9) is deferred. We will not scale features, queues, workers, databases, or architectures until there is measured production usage and validated customer demand.
-**Reason/evidence:** Project core rule: "DO NOT scale features merely because they are technically possible." Currently, there is no application code, no production workload, and no measurable capacity usage. Optimization without measured bottlenecks is blind and wastes resources.
-**Security/privacy impact:** Preserves current security baseline and tenant isolation model without adding unnecessary complexity.
-**Cost/operational impact:** Saves infrastructure costs by avoiding premature capacity expansion.
-**Follow-up/reversal condition:** Implement capacity and reliability scaling *only after* production load demonstrates clear performance bottlenecks or customer volume necessitates expansion.
+**Milestone:** M6
+**Decision:** Stripe is selected as the payment provider.
+**Reason/evidence:** Verified to support hosted checkout, subscription lifecycle management, required currencies and availability in the target market (US/North America).
+**Verification Date:** 2026-10-01
