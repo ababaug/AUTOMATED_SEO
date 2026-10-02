@@ -8,6 +8,66 @@ The format is milestone-oriented so Google Jules or another coding agent can app
 
 ### Added
 
+- None.
+
+### Changed
+
+- None.
+
+### Fixed
+
+- None.
+
+### Security
+
+- None.
+
+### Tests
+
+- None.
+
+### Known limitations
+
+- None.
+
+### Gate
+
+- None.
+
+---
+
+## [2026-10-01] — M9 — Scale validated platform workflows
+
+### Added
+- Documented deferment of scaling activities due to lack of measured production data.
+
+### Changed
+- Marked Phase 9 status to BLOCKED in `ROADMAP.md` and `TEST_RESULTS.md`.
+
+### Fixed
+- None.
+
+### Security
+- Acknowledged that scaling must not weaken tenant isolation (not tested due to lack of application).
+
+### Tests
+- Tests could not be executed. Load testing, isolation, and queue fairness require a running system and production evidence.
+
+### Known limitations
+- Cannot measure usage, queues, throughput, or capacity due to non-existent application.
+- Cannot scale features without customer demand and measured performance bottlenecks.
+
+### Gate
+- **BLOCKED**
+- Reason: No measured production evidence or running platform to scale. Core rule mandates scaling only supported by measured usage or validated customer demand.
+- Next milestone: N/A
+
+---
+
+## [2026-10-01] — M0 — Define product validation and architecture
+
+### Added
+
 - Initial project-state documentation for milestone-driven development:
   - `ROADMAP.md`
   - `DECISIONS.md`
