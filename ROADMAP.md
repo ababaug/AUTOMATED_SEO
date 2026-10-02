@@ -3,6 +3,9 @@
 **Current milestone:** M4 — Search and local-business data
 **Current phase:** Phase 4
 **Status:** BLOCKED
+**Current milestone:** M1 — Secure account foundation
+**Current phase:** Phase 1
+**Status:** PASS
 **Source of truth:** `AUTOMATED_SEO_BUILD_PROMPT.md`
 
 ## Operating rules
@@ -171,6 +174,7 @@ Load test at 2× expected next-quarter peak, document cost per tenant, prove no 
 ## Next Jules task
 
 M4 development is BLOCKED. Do not implement M4. First, milestones M1, M2, and M3 must be implemented, tested, and marked as PASS on main in order.
+Implement **M2 only**. Do not implement M2 until the M1 exit gate is explicitly recorded as PASS.
 
 ## Product Flow (Signup to Measure)
 1. **Signup**: User creates account, verifies email.

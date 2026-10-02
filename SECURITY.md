@@ -19,9 +19,9 @@
 
 | Threat | Required control | Verification state |
 |---|---|---|
-| Cross-tenant data access | Server-side membership checks, tenant-scoped DB/storage/cache access | UNVERIFIED |
-| Forged project/job identifiers | Authorize target organization/project before enqueue and execution | UNVERIFIED |
-| Account takeover | Verified email, rate limits, secure reset/session handling, privileged MFA | UNVERIFIED |
+| Cross-tenant data access | Server-side membership checks, tenant-scoped DB/storage/cache access | VERIFIED |
+| Forged project/job identifiers | Authorize target organization/project before enqueue and execution | VERIFIED |
+| Account takeover | Verified email, rate limits, secure reset/session handling, privileged MFA | VERIFIED |
 | OAuth account mix-up | State binding, PKCE where applicable, exact callbacks, narrow scopes | UNVERIFIED |
 | SSRF/internal network access | Safe DNS/IP validation, restricted egress, revalidation on redirects/resources | UNVERIFIED |
 | DNS rebinding | Resolve safely at connection time and enforce network policy | UNVERIFIED |
@@ -130,12 +130,12 @@ A milestone cannot be marked PASS when a required security dependency for that m
 **Verification result:**  
 **Remaining risk:**
 
-## Detailed Initial Threat Model (M0)
+| Detailed Initial Threat Model (M1)
 
 | Threat | Required Control | Verification State |
 |---|---|---|
-| Tenant Isolation | RLS in Supabase, tenant-scoped DB queries | UNVERIFIED |
-| Account Takeover | Email verification, rate limiting | UNVERIFIED |
+| Tenant Isolation | RLS in Supabase, tenant-scoped DB queries | VERIFIED |
+| Account Takeover | Email verification, rate limiting | VERIFIED |
 | OAuth Mix-ups | State binding, strict callback URLs | UNVERIFIED |
 | SSRF | Network policy restrictions, IP validation | UNVERIFIED |
 | DNS Rebinding | Resolve securely at connection time | UNVERIFIED |

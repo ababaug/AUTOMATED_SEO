@@ -64,6 +64,17 @@ This file records architectural and product decisions. Do not silently turn assu
 **Status:** PROPOSED  
 **Decision:** Start with one narrow, reversible WordPress metadata change type. Every change follows draft → validation → diff → approval → snapshot → conflict check → apply → verify → audit record.
 
+## D-020 — Test framework and environment configuration
+
+**Status:** ACCEPTED
+**Date:** 2026-10-01
+**Milestone:** M1
+**Decision:** Selected Jest for unit testing and configured `next/proxy` instead of `middleware` to align with the Next.js version used.
+**Reason/evidence:** Fast unit test runner perfectly suited for validating logic, security models, and server actions.
+**Security/privacy impact:** Nil.
+**Cost/operational impact:** Nil.
+**Follow-up/reversal condition:** If End-to-End browser interactions are required, adopt Playwright as well.
+
 ## D-010 — Billing
 
 **Status:** PROPOSED  
