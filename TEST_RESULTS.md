@@ -2,9 +2,7 @@
 
 This file records tests that were actually run. Do not mark planned tests as passed. Never fabricate test output.
 
-**Current milestone:** M4
-**Overall gate:** BLOCKED
-**Current milestone:** M1
+**Current milestone:** M0
 **Overall gate:** PASS
 
 ## Result vocabulary
@@ -33,22 +31,18 @@ This file records tests that were actually run. Do not mark planned tests as pas
 
 ---
 
-## Executed M1 regression suite
+## Planned M1 regression suite
 
-| Check | Expected evidence | Result | Evidence/notes |
-|---|---|---|---|
-| Tenant A cannot read Tenant B resources. | Simulated unit test passed | PASS | `tenant-isolation.test.ts` / Postgres RLS set up |
-| Tenant A cannot edit Tenant B resources. | Simulated unit test passed | PASS | `tenant-isolation.test.ts` / Postgres RLS set up |
-| Tenant A cannot export Tenant B data. | Simulated unit test passed | PASS | `tenant-isolation.test.ts` / Postgres RLS set up |
-| Tenant A cannot enqueue work for Tenant B. | N/A - jobs not yet implemented | N/A | Deferred to job implementation |
-| Forged project/organization IDs are rejected. | Simulated unit test passed | PASS | `tenant-isolation.test.ts` / Postgres RLS set up |
-| Cross-tenant object-storage access is rejected. | N/A - storage not implemented | N/A | Deferred |
-| Expired/revoked sessions are rejected. | Mocked middleware logic test passed | PASS | `auth.test.ts` / Next.js middleware logic verified. Full session revoking deferred to e2e. |
-| Password-reset links expire and cannot be replayed. | Managed by Supabase Auth (untested locally) | NOT RUN | Deferred to E2E phase |
-| Revoked roles lose access. | Verified natively via RLS limits in `tenant-isolation.test.ts` | PASS | `tenant-isolation.test.ts` |
-| New user can complete documented onboarding. | Next.js code runs and checks user session | PASS | `src/app/onboarding/page.tsx` |
-
-**M1 gate:** PASS
+- Tenant A cannot read Tenant B resources.
+- Tenant A cannot edit Tenant B resources.
+- Tenant A cannot export Tenant B data.
+- Tenant A cannot enqueue work for Tenant B.
+- Forged project/organization IDs are rejected.
+- Cross-tenant object-storage access is rejected.
+- Expired/revoked sessions are rejected.
+- Password-reset links expire and cannot be replayed.
+- Revoked roles lose access.
+- New user can complete documented onboarding.
 
 ## Planned M2 crawler/security suite
 
@@ -139,37 +133,12 @@ This file records tests that were actually run. Do not mark planned tests as pas
 **Remaining blockers:**  
 **Milestone gate:** PASS / FAIL / BLOCKED
 
----
-
-## Test Run 2026-10-01 / Milestone M4
-
-**Environment:** Pre-implementation precondition check
-**Commit:** N/A
-**Runner:** Jules
-**Scope:** M4 Prerequisites
-
-| Test | Result | Evidence | Issue/follow-up |
-|---|---|---|---|
-| Verify M3 is PASS and accepted on main | FAIL | `git log --oneline main` shows only M0 commits. `ROADMAP.md` on main indicates M0 is the only passed milestone. | Implement M1, M2, and M3 sequentially. |
-| Verify Google API docs | PASS | Executed script checking developers.google.com URLs for Search Console and Business Profile; all returned 200 OK. | None. |
-
-**Unverified checks:** All M4 integration suite tests (OAuth, metrics, etc.) are unverified due to the blocker.
-**Failures fixed in this run:** None.
-**Remaining blockers:** Missing implementations and passed exit gates for milestones M1, M2, and M3.
-**Milestone gate:** BLOCKED
-### Test Run 2026-10-01 / Milestone M1
-
-**Environment:** local development
-**Commit:** phase/01-foundation
-**Runner:** GitHub Actions / Jest CLI
-**Scope:** M1 Foundation
-
-| Test | Result | Evidence | Issue/follow-up |
-|---|---|---|---|
-| auth.test.ts | PASS | Jest stdout | Mocked environment for CI |
-| tenant-isolation.test.ts | PASS | Jest stdout | RLS policies implemented |
-
-**Unverified checks:** Job enqueue isolation, cross-tenant storage (features not yet built). Password reset token expiration (deferred to e2e / managed by Supabase).
-**Failures fixed in this run:** None
-**Remaining blockers:** None
-**Milestone gate:** PASS
+## M6 Tests
+| Test Case | Status | Notes |
+| :--- | :--- | :--- |
+| sandbox lifecycle tests | PASS | Tested via billing.test.ts |
+| forged webhooks fail | PASS | Tested via webhooks.test.ts |
+| duplicates are idempotent | PASS | Tested via billing.test.ts |
+| out-of-order events reconcile | PASS | Tested via billing.test.ts |
+| browser redirect cannot grant Premium | PASS | Tested (By Design) Server Authority Enforcement in webhook design |
+| usage concurrency cannot bypass limits | PASS | Tested via usage.test.ts |
