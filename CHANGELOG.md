@@ -14,10 +14,18 @@ The format is milestone-oriented so Google Jules or another coding agent can app
   - `SECURITY.md`
   - `TEST_RESULTS.md`
   - `CHANGELOG.md`
+- Added AI-driven structured recommendations schema and Types (`src/types/recommendation.ts`).
+- Added AI adapter interfaces and `MockLocalAIAdapter` (`src/ai/interface.ts`, `src/adapters/ai-adapter.ts`).
+- Added factual safety validation using `OwnerApprovedContext` (`src/ai/validator.ts`).
+- Added a human review queue with state transition logic (`src/reviews/queue.ts`).
+- Added comprehensive jest tests (`src/tests/ai.test.ts`).
 
 ### Changed
 
-- None.
+- Updated `ROADMAP.md` marking M3 exit gates as passed.
+- Updated `DECISIONS.md` with decisions on AI schema and Free/Local AI strategy.
+- Updated `SECURITY.md` with AI prompt injection controls and quotas.
+- Updated `TEST_RESULTS.md` with test suite outcome for M3.
 
 ### Fixed
 
