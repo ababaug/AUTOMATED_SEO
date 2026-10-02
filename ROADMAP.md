@@ -1,7 +1,7 @@
 # Automated SEO SaaS — Roadmap
 
-**Current milestone:** M0 — Validate the offer and integration feasibility  
-**Current phase:** Phase 0  
+**Current milestone:** M1 — Secure account foundation
+**Current phase:** Phase 1
 **Status:** PASS
 **Source of truth:** `AUTOMATED_SEO_BUILD_PROMPT.md`
 
@@ -170,7 +170,7 @@ Load test at 2× expected next-quarter peak, document cost per tenant, prove no 
 
 ## Next Jules task
 
-Implement **M0 only**. Do not implement M1 until the M0 exit gate is explicitly recorded as PASS.
+Implement **M2 only**. Do not implement M2 until the M1 exit gate is explicitly recorded as PASS.
 
 ## Product Flow (Signup to Measure)
 1. **Signup**: User creates account, verifies email.
