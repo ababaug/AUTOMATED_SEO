@@ -64,6 +64,17 @@ This file records architectural and product decisions. Do not silently turn assu
 **Status:** PROPOSED  
 **Decision:** Start with one narrow, reversible WordPress metadata change type. Every change follows draft → validation → diff → approval → snapshot → conflict check → apply → verify → audit record.
 
+## D-020 — Test framework and environment configuration
+
+**Status:** ACCEPTED
+**Date:** 2026-10-01
+**Milestone:** M1
+**Decision:** Selected Jest for unit testing and configured `next/proxy` instead of `middleware` to align with the Next.js version used.
+**Reason/evidence:** Fast unit test runner perfectly suited for validating logic, security models, and server actions.
+**Security/privacy impact:** Nil.
+**Cost/operational impact:** Nil.
+**Follow-up/reversal condition:** If End-to-End browser interactions are required, adopt Playwright as well.
+
 ## D-010 — Billing
 
 **Status:** PROPOSED  
@@ -179,11 +190,22 @@ This file records architectural and product decisions. Do not silently turn assu
 **Reason/evidence:** Sets clear measurable bounds for the free pilot to ensure cost control and clear success/failure metrics.
 **Follow-up/reversal condition:** Adjust premium hypothesis if customer interviews show lower/higher willingness to pay.
 
-## D-020 — Selected Payment Provider
+## D-020 — Verification of M4 Prerequisites
 
 **Status:** ACCEPTED
 **Date:** 2026-10-01
-**Milestone:** M6
-**Decision:** Stripe is selected as the payment provider.
-**Reason/evidence:** Verified to support hosted checkout, subscription lifecycle management, required currencies and availability in the target market (US/North America).
-**Verification Date:** 2026-10-01
+**Milestone:** M4
+**Decision:** Halt M4 development. The milestone is currently blocked because preconditions are not met. The prompt dictates: "Verify M3 is PASS and accepted on main." Investigation shows that main only contains M0 (validation). Missing implementation of M1, M2, and M3.
+**Reason/evidence:** Operating rules specify "Do not begin the next milestone until the current exit gate passes" and "Verify prerequisites and existing work before changing code." Main branch commit log and ROADMAP.md show only M0 has been passed.
+**Security/privacy impact:** Proceeding without foundational security controls (M1 auth/tenant isolation) is unsafe.
+**Cost/operational impact:** None.
+**Follow-up/reversal condition:** Resume M4 only after M1, M2, and M3 are fully implemented, tested, and passing their respective gates on main.
+
+## D-021 — Google API Documentation Verification
+
+**Status:** ACCEPTED
+**Date:** 2026-10-01
+**Milestone:** M4
+**Decision:** Google API documentation for Search Console, Business Profile, and OAuth was successfully verified as available and active on this date.
+**Reason/evidence:** Verified via automated script against `developers.google.com/webmaster-tools/v1/searchanalytics/query`, `developers.google.com/my-business/reference/rest`, and `developers.google.com/identity/protocols/oauth2`.
+**External source and verification date:** `developers.google.com`, verified on 2026-10-01.

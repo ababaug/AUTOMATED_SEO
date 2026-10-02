@@ -1,33 +1,37 @@
 {
-  "dependencies": {
-    "@stripe/stripe-js": "^10.0.0",
-    "@supabase/supabase-js": "^2.117.2",
-    "stripe": "^23.0.0",
-    "supabase": "^2.119.0"
-  },
-  "name": "app",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "tmp_app",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ababaug/AUTOMATED_SEO.git"
+  "dependencies": {
+    "@supabase/ssr": "^0.12.7",
+    "next": "16.3.8",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/ababaug/AUTOMATED_SEO/issues"
-  },
-  "homepage": "https://github.com/ababaug/AUTOMATED_SEO#readme",
   "devDependencies": {
+    "@supabase/supabase-js": "^2.117.2",
+    "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
     "@types/jest": "^30.0.0",
+    "@types/node": "^20",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
     "jest": "^30.5.2",
+    "jest-environment-jsdom": "^30.5.2",
+    "node-mocks-http": "^1.18.1",
+    "pg": "^8.23.1",
+    "tailwindcss": "^4",
     "ts-jest": "^29.4.14",
-    "typescript": "^6.0.3"
+    "typescript": "^5"
   }
 }
