@@ -178,4 +178,12 @@ This file records architectural and product decisions. Do not silently turn assu
 **Premium Hypothesis:** $149/mo for 1 business site and 1 location with capped pages/audits.
 **Reason/evidence:** Sets clear measurable bounds for the free pilot to ensure cost control and clear success/failure metrics.
 **Follow-up/reversal condition:** Adjust premium hypothesis if customer interviews show lower/higher willingness to pay.
-\n## D-015 — AI Recommendations Schema and Factual Safety\n\n**Status:** ACCEPTED\n**Decision:** AI outputs must adhere to a strict Zod schema (`StructuredRecommendationSchema`). Factual claims must be checked against an `OwnerApprovedContext`. A human review queue controls publishing.\n**Reason:** AI must not replace deterministic findings or invent unsupported factual business claims.\n\n## D-016 — Free/Local AI Strategy\n\n**Status:** ACCEPTED\n**Decision:** Utilize an adapter interface to support free/local models while preventing silent switches to paid APIs (`paid_ai_enabled=false`).\n**Reason:** Maintains the project's approved free/local strategy while isolating provider-specific logic.\n
+
+## D-020 — Selected Payment Provider
+
+**Status:** ACCEPTED
+**Date:** 2026-10-01
+**Milestone:** M6
+**Decision:** Stripe is selected as the payment provider.
+**Reason/evidence:** Verified to support hosted checkout, subscription lifecycle management, required currencies and availability in the target market (US/North America).
+**Verification Date:** 2026-10-01

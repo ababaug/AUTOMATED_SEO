@@ -100,3 +100,12 @@ The format is milestone-oriented so Google Jules or another coding agent can app
 - **PASS / FAIL / BLOCKED**
 - Reason:
 - Next milestone:
+
+## [Unreleased] - Phase 06
+
+### Added
+- Implemented `Subscription`, `Entitlements`, `UsageLedger`, and `WebhookEventLedger` models.
+- Added `getEntitlements` mapping for trial and premium plans based on valid active/grace states.
+- Implemented `UsageService` for atomic, concurrent-safe reservation/consumption with idempotency.
+- Created Stripe Webhook processor `WebhookService` with signature verification, replay protection, and out-of-order resolution.
+- Added Next.js API route `/api/webhooks/stripe` for webhook reception.

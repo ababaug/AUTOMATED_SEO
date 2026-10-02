@@ -1,7 +1,7 @@
 # Automated SEO SaaS — Roadmap
 
-**Current milestone:** M3 — Semantic SEO and AI recommendations
-**Current phase:** Phase 3
+**Current milestone:** M6 — Validate the offer and integration feasibility
+**Current phase:** Phase 6
 **Status:** PASS
 **Source of truth:** `AUTOMATED_SEO_BUILD_PROMPT.md`
 
@@ -120,6 +120,8 @@ On staging, demonstrate success, permission denial, concurrent edit conflict, ne
 
 ## Phase 6 — M6: Monthly subscriptions
 
+**Status:** PASS
+
 **Goal:** Billing state and server-side entitlements remain consistent.
 
 ### Scope
@@ -174,7 +176,7 @@ Load test at 2× expected next-quarter peak, document cost per tenant, prove no 
 
 ## Next Jules task
 
-Implement **M0 only**. Do not implement M1 until the M0 exit gate is explicitly recorded as PASS.
+Implement **M7 only**. Do not implement M8 until the M7 exit gate is explicitly recorded as PASS.
 
 ## Product Flow (Signup to Measure)
 1. **Signup**: User creates account, verifies email.

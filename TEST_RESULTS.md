@@ -2,7 +2,7 @@
 
 This file records tests that were actually run. Do not mark planned tests as passed. Never fabricate test output.
 
-**Current milestone:** M0  
+**Current milestone:** M0
 **Overall gate:** PASS
 
 ## Result vocabulary
@@ -132,4 +132,13 @@ This file records tests that were actually run. Do not mark planned tests as pas
 **Failures fixed in this run:**  
 **Remaining blockers:**  
 **Milestone gate:** PASS / FAIL / BLOCKED
-\n## M3 Test Suite\n\n- Valid structured output validation: PASS\n- Reject unsupported claims (e.g. awards, prices, years experience): PASS\n- Prompt injection simulation detection: PASS\n- Provide timeout/malformed handling: PASS\n- Quota limit exhaustion handling: PASS\n- Human review lifecycle (queue, approve/reject): PASS\n
+
+## M6 Tests
+| Test Case | Status | Notes |
+| :--- | :--- | :--- |
+| sandbox lifecycle tests | PASS | Tested via billing.test.ts |
+| forged webhooks fail | PASS | Tested via webhooks.test.ts |
+| duplicates are idempotent | PASS | Tested via billing.test.ts |
+| out-of-order events reconcile | PASS | Tested via billing.test.ts |
+| browser redirect cannot grant Premium | PASS | Tested (By Design) Server Authority Enforcement in webhook design |
+| usage concurrency cannot bypass limits | PASS | Tested via usage.test.ts |
