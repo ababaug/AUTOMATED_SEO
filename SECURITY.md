@@ -1,7 +1,7 @@
 # Automated SEO SaaS — Security Plan
 
-**Security status:** Threat model defined (M0). Controls are requirements until verified by tests.
-**Current milestone:** M0
+**Security status:** Threat model defined (M0). Controls are requirements until verified by tests. M8 launch preparations are BLOCKED.
+**Current milestone:** M8
 
 ## Security principles
 
@@ -151,3 +151,7 @@ A milestone cannot be marked PASS when a required security dependency for that m
 | Concurrent Edits | Hash checking before apply | UNVERIFIED |
 | Data Loss | Supabase automated backups | UNVERIFIED |
 | Admin Access | Separate role, no customer impersonation without consent | UNVERIFIED |
+
+## Open questions / Blockers
+
+- **M8 Blocker:** Narrow production launch preparations cannot proceed because required M7 pilot evidence does not exist. Previous milestones M1-M7 have not been implemented.

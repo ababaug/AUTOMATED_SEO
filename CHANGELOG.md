@@ -8,6 +8,57 @@ The format is milestone-oriented so Google Jules or another coding agent can app
 
 ### Added
 
+- None.
+
+### Changed
+
+- Updated project-state files to reflect that M8 is BLOCKED.
+
+### Fixed
+
+- None.
+
+### Security
+
+- None.
+
+### Known limitations
+
+- M8 is blocked due to missing M7 pilot evidence.
+
+---
+
+## [2026-10-01] — M8 — Narrow production launch
+
+### Added
+- None.
+
+### Changed
+- None.
+
+### Fixed
+- None.
+
+### Security
+- None.
+
+### Tests
+- M8 tests are BLOCKED.
+
+### Known limitations
+- M8 is BLOCKED because required M7 pilot evidence does not exist.
+
+### Gate
+- **BLOCKED**
+- Reason: Required pilot evidence from M7 does not exist. Previous milestones (M1-M7) have not been implemented.
+- Next milestone: N/A (Must unblock by implementing prior milestones)
+
+---
+
+## [2026-10-01] — M0 — Define product validation and architecture
+
+### Added
+
 - Initial project-state documentation for milestone-driven development:
   - `ROADMAP.md`
   - `DECISIONS.md`
