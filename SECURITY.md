@@ -1,7 +1,7 @@
 # Automated SEO SaaS — Security Plan
 
-**Security status:** Threat model defined (M0). Controls are requirements until verified by tests.
-**Current milestone:** M0
+**Security status:** Threat model defined (M0). M4 controls are BLOCKED pending M1-M3 implementation.
+**Current milestone:** M4
 
 ## Security principles
 

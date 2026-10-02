@@ -66,6 +66,31 @@ The format is milestone-oriented so Google Jules or another coding agent can app
 
 ---
 
+## [2026-10-01] — M4 — Search and local-business data
+
+### Added
+- None.
+
+### Changed
+- None.
+
+### Fixed
+- None.
+
+### Security
+- None.
+
+### Tests
+- Validated Google API documentation availability.
+- Executed precondition check: "Verify M3 is PASS and accepted on main". Result: FAIL.
+
+### Known limitations
+- M1 (Secure account foundation), M2 (Deterministic technical audit), and M3 (Semantic SEO and AI recommendations) have not been implemented.
+
+### Gate
+- **BLOCKED**
+- Reason: Preconditions not met. M3 must be PASS and accepted on main before M4 can begin.
+- Next milestone: M1 (to resolve blockers)
 ## [2026-10-01] — M1 — Secure account foundation
 
 ### Added
