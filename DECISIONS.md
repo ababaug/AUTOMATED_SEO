@@ -187,3 +187,12 @@ This file records architectural and product decisions. Do not silently turn assu
 **Decision:** Stripe is selected as the payment provider.
 **Reason/evidence:** Verified to support hosted checkout, subscription lifecycle management, required currencies and availability in the target market (US/North America).
 **Verification Date:** 2026-10-01
+
+## D-021 — M7 and M8 Blocked
+
+**Status:** ACCEPTED
+**Date:** 2026-10-01
+**Milestone:** M7, M8
+**Decision:** Mark M7 and M8 as BLOCKED.
+**Reason/evidence:** M7 is BLOCKED because required pilot evidence does not exist. According to instructions, "If M7 is BLOCKED because required pilot evidence does not exist: STOP. Do not bypass the gate."
+**Follow-up/reversal condition:** When actual pilot evidence and a running M1-M6 system is available, we can resume work on M7 and then M8.

@@ -36,6 +36,35 @@ The format is milestone-oriented so Google Jules or another coding agent can app
 
 ---
 
+## [2026-10-02] — M8 — Narrow production launch
+
+### Added
+- None (BLOCKED by missing pilot evidence).
+
+### Changed
+- Marked M8 status to BLOCKED in `ROADMAP.md` and `TEST_RESULTS.md`.
+- Documented blocking reason in `DECISIONS.md`.
+- Updated `SECURITY.md` current milestone to M8.
+
+### Fixed
+- None.
+
+### Security
+- None.
+
+### Tests
+- M7 precondition checks failed due to missing pilot evidence.
+
+### Known limitations
+- M8 code cannot be written until M7 pilot evidence is available, per operating instructions.
+
+### Gate
+- **BLOCKED**
+- Reason: The required pilot evidence for M7 does not exist, which blocks the M8 launch preparation.
+- Next milestone: N/A
+
+---
+
 ## [2026-10-01] — M9 — Scale validated platform workflows
 
 ### Added

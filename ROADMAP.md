@@ -1,8 +1,8 @@
 # Automated SEO SaaS — Roadmap
 
-**Current milestone:** M6 — Validate the offer and integration feasibility
-**Current phase:** Phase 6
-**Status:** PASS
+**Current milestone:** M8 — Narrow production launch
+**Current phase:** Phase 8
+**Status:** BLOCKED
 **Source of truth:** `AUTOMATED_SEO_BUILD_PROMPT.md`
 
 ## Operating rules
@@ -136,6 +136,8 @@ Sandbox tests cover payment lifecycle and webhook failure/replay/order cases. Br
 
 ## Phase 7 — M7: Controlled pilot and hardening
 
+**Status:** BLOCKED
+
 **Goal:** Evidence supports a paid beta.
 
 ### Scope
@@ -149,6 +151,8 @@ No unresolved exploitable high/critical security issues. Tenant isolation and pa
 ---
 
 ## Phase 8 — M8: Narrow production launch
+
+**Status:** BLOCKED
 
 **Goal:** Paying customers complete the full value loop.
 
@@ -176,7 +180,7 @@ Load test at 2× expected next-quarter peak, document cost per tenant, prove no 
 
 ## Next Jules task
 
-Implement **M7 only**. Do not implement M8 until the M7 exit gate is explicitly recorded as PASS.
+Implement **M8 only**. Do not implement M9 until the M8 exit gate is explicitly recorded as PASS.
 
 ## Product Flow (Signup to Measure)
 1. **Signup**: User creates account, verifies email.

@@ -2,8 +2,8 @@
 
 This file records tests that were actually run. Do not mark planned tests as passed. Never fabricate test output.
 
-**Current milestone:** M0
-**Overall gate:** PASS
+**Current milestone:** M8
+**Overall gate:** BLOCKED
 
 ## Result vocabulary
 
@@ -102,7 +102,7 @@ This file records tests that were actually run. Do not mark planned tests as pas
 - Browser redirect cannot grant Premium.
 - Concurrent usage cannot bypass limits or double-charge.
 
-## Planned M7/M8 operational suite
+## M7/M8 operational suite
 
 - Backup restoration exercise.
 - Deployment rollback.
@@ -142,3 +142,10 @@ This file records tests that were actually run. Do not mark planned tests as pas
 | out-of-order events reconcile | PASS | Tested via billing.test.ts |
 | browser redirect cannot grant Premium | PASS | Tested (By Design) Server Authority Enforcement in webhook design |
 | usage concurrency cannot bypass limits | PASS | Tested via usage.test.ts |
+
+## M7/M8 Tests
+| Test Case | Status | Notes |
+| :--- | :--- | :--- |
+| Pilot findings/feedback | FAIL | Required pilot evidence does not exist |
+| M7 precondition checks | FAIL | Required pilot evidence does not exist |
+| M8 production smoke tests | BLOCKED | Blocked by M7 precondition failure |
