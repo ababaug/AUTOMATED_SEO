@@ -93,11 +93,11 @@ The format is milestone-oriented so Google Jules or another coding agent can app
 - Reason:
 - Next milestone:
 
-## [Phase 7] - M7 Controlled Pilot and Hardening (BLOCKED)
+## [Unreleased] - Phase 06
 
 ### Added
-- Added Incident Response Playbook to `SECURITY.md`.
-- Drafted M7 requirements in `TEST_RESULTS.md` and `DECISIONS.md`.
-
-### Blocked
-- M7 implementation is blocked. Precondition "Verify M6 is PASS and accepted on main" failed because the codebase is currently at M0. M1-M6 must be completed first.
+- Implemented `Subscription`, `Entitlements`, `UsageLedger`, and `WebhookEventLedger` models.
+- Added `getEntitlements` mapping for trial and premium plans based on valid active/grace states.
+- Implemented `UsageService` for atomic, concurrent-safe reservation/consumption with idempotency.
+- Created Stripe Webhook processor `WebhookService` with signature verification, replay protection, and out-of-order resolution.
+- Added Next.js API route `/api/webhooks/stripe` for webhook reception.
