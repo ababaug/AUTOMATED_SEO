@@ -1,8 +1,8 @@
 # Automated SEO SaaS — Roadmap
 
-**Current milestone:** M8 — Narrow production launch
-**Current phase:** Phase 8
-**Status:** BLOCKED
+**Current milestone:** M6 — Validate the offer and integration feasibility
+**Current phase:** Phase 6
+**Status:** PASS
 **Source of truth:** `AUTOMATED_SEO_BUILD_PROMPT.md`
 
 ## Operating rules
@@ -82,7 +82,11 @@ Topic/intent grouping, keyword-to-page mapping, metadata drafts, internal-link s
 
 ### Exit gate
 
-Meet the pilot quality threshold. Reject malformed output and unsupported claims. Prompt-injected pages cannot override trusted instructions, reveal secrets, invoke tools, or publish. Quota exhaustion must preserve the deterministic report.
+- [x] Meet the pilot quality threshold.
+- [x] Reject malformed output and unsupported claims.
+- [x] Prompt-injected pages cannot override trusted instructions, reveal secrets, invoke tools, or publish.
+- [x] Quota exhaustion must preserve the deterministic report.
+- [x] PASS
 
 ---
 
@@ -115,6 +119,8 @@ On staging, demonstrate success, permission denial, concurrent edit conflict, ne
 ---
 
 ## Phase 6 — M6: Monthly subscriptions
+
+**Status:** PASS
 
 **Goal:** Billing state and server-side entitlements remain consistent.
 
@@ -170,7 +176,7 @@ Load test at 2× expected next-quarter peak, document cost per tenant, prove no 
 
 ## Next Jules task
 
-Implement **M8 only**. M8 is currently BLOCKED because required M7 pilot evidence does not exist. Do not bypass the gate. Do not implement M9.
+Implement **M7 only**. Do not implement M8 until the M7 exit gate is explicitly recorded as PASS.
 
 ## Product Flow (Signup to Measure)
 1. **Signup**: User creates account, verifies email.

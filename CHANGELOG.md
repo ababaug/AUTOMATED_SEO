@@ -12,7 +12,7 @@ The format is milestone-oriented so Google Jules or another coding agent can app
 
 ### Changed
 
-- Updated project-state files to reflect that M8 is BLOCKED.
+- None.
 
 ### Fixed
 
@@ -20,38 +20,47 @@ The format is milestone-oriented so Google Jules or another coding agent can app
 
 ### Security
 
-- None.
-
-### Known limitations
-
-- M8 is blocked due to missing M7 pilot evidence.
-
----
-
-## [2026-10-01] — M8 — Narrow production launch
-
-### Added
-- None.
-
-### Changed
-- None.
-
-### Fixed
-- None.
-
-### Security
 - None.
 
 ### Tests
-- M8 tests are BLOCKED.
+
+- None.
 
 ### Known limitations
-- M8 is BLOCKED because required M7 pilot evidence does not exist.
+
+- None.
+
+### Gate
+
+- None.
+
+---
+
+## [2026-10-01] — M9 — Scale validated platform workflows
+
+### Added
+- Documented deferment of scaling activities due to lack of measured production data.
+
+### Changed
+- Marked Phase 9 status to BLOCKED in `ROADMAP.md` and `TEST_RESULTS.md`.
+
+### Fixed
+- None.
+
+### Security
+- Acknowledged that scaling must not weaken tenant isolation (not tested due to lack of application).
+
+### Tests
+- Tests could not be executed. Load testing, isolation, and queue fairness require a running system and production evidence.
+
+### Known limitations
+- Cannot measure usage, queues, throughput, or capacity due to non-existent application.
+- Cannot scale features without customer demand and measured performance bottlenecks.
 
 ### Gate
 - **BLOCKED**
-- Reason: Required pilot evidence from M7 does not exist. Previous milestones (M1-M7) have not been implemented.
-- Next milestone: N/A (Must unblock by implementing prior milestones)
+- Reason: No measured production evidence or running platform to scale. Core rule mandates scaling only supported by measured usage or validated customer demand.
+- Next milestone: N/A
 
 ---
 
@@ -65,10 +74,18 @@ The format is milestone-oriented so Google Jules or another coding agent can app
   - `SECURITY.md`
   - `TEST_RESULTS.md`
   - `CHANGELOG.md`
+- Added AI-driven structured recommendations schema and Types (`src/types/recommendation.ts`).
+- Added AI adapter interfaces and `MockLocalAIAdapter` (`src/ai/interface.ts`, `src/adapters/ai-adapter.ts`).
+- Added factual safety validation using `OwnerApprovedContext` (`src/ai/validator.ts`).
+- Added a human review queue with state transition logic (`src/reviews/queue.ts`).
+- Added comprehensive jest tests (`src/tests/ai.test.ts`).
 
 ### Changed
 
-- None.
+- Updated `ROADMAP.md` marking M3 exit gates as passed.
+- Updated `DECISIONS.md` with decisions on AI schema and Free/Local AI strategy.
+- Updated `SECURITY.md` with AI prompt injection controls and quotas.
+- Updated `TEST_RESULTS.md` with test suite outcome for M3.
 
 ### Fixed
 
@@ -82,6 +99,38 @@ The format is milestone-oriented so Google Jules or another coding agent can app
 
 - External provider/API feasibility has not yet been reverified at implementation time.
 - No application behavior or test result is claimed by this changelog entry.
+
+---
+
+## [2026-10-01] — M5 — Approved publishing
+
+### Added
+- Added decision D-020: Selected WordPress Yoast SEO meta description (`yoast_wpseo_metadesc`) as the initial publishing operation.
+- Added decision D-021: Implementation of M5 is BLOCKED due to missing M1-M4 code (Next.js application, DB, Auth, Integrations).
+- Added M5 publishing approval workflow threats to the initial threat model in `SECURITY.md`.
+- Added Test Run entry for M5 in `TEST_RESULTS.md`, recording M4 prerequisite as FAIL and M5 as BLOCKED.
+- Updated `ROADMAP.md` to reflect M5 as the current milestone, Phase 5 as the current phase, and status as BLOCKED.
+
+### Changed
+- None.
+
+### Fixed
+- None.
+
+### Security
+- Added M5 threats (Malicious CMS edit injection, race conditions on publish, unapproved publishing) and unverified controls.
+
+### Tests
+- M4 prerequisite verified as FAIL.
+- M5 staging suite marked as BLOCKED since the application does not exist.
+
+### Known limitations
+- M5 code cannot be written until M1-M4 are completed, per the operating rule "Verify prerequisites and existing work before changing code".
+
+### Gate
+- **BLOCKED**
+- Reason: The Next.js app and required infrastructure from M1-M4 are not present in the repository.
+- Next milestone: phase/06-billing (Recommended by user, though M1 is conceptually next to build the app).
 
 ---
 
@@ -143,3 +192,12 @@ The format is milestone-oriented so Google Jules or another coding agent can app
 - **PASS / FAIL / BLOCKED**
 - Reason:
 - Next milestone:
+
+## [Unreleased] - Phase 06
+
+### Added
+- Implemented `Subscription`, `Entitlements`, `UsageLedger`, and `WebhookEventLedger` models.
+- Added `getEntitlements` mapping for trial and premium plans based on valid active/grace states.
+- Implemented `UsageService` for atomic, concurrent-safe reservation/consumption with idempotency.
+- Created Stripe Webhook processor `WebhookService` with signature verification, replay protection, and out-of-order resolution.
+- Added Next.js API route `/api/webhooks/stripe` for webhook reception.

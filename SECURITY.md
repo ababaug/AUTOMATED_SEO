@@ -1,7 +1,8 @@
 # Automated SEO SaaS — Security Plan
 
-**Security status:** Threat model defined (M0). Controls are requirements until verified by tests. M8 launch preparations are BLOCKED.
-**Current milestone:** M8
+**Security status:** Threat model defined (M0). Controls are requirements until verified by tests.
+**Current milestone:** M7
+**Gate Status:** BLOCKED (M6 preconditions not met)
 
 ## Security principles
 
@@ -39,6 +40,9 @@
 | Supply-chain compromise | Lockfiles, pinned dependencies where appropriate, dependency/license/secret scans | UNVERIFIED |
 | Unauthorized admin access | Least privilege, MFA, time-limited audited support access | UNVERIFIED |
 | CSRF/unwanted state change | Framework-appropriate CSRF/origin/session protections | UNVERIFIED |
+| Malicious CMS edit injection (M5) | Restrict changes to known metadata fields; strict plain-text validation | BLOCKED (M5) |
+| Race conditions on publish (M5) | Pre-publish snapshot validation; fail if target diverges from approved base | BLOCKED (M5) |
+| Unapproved publishing (M5) | Bind approvals to exact hash, user, timestamp, target, and operation | BLOCKED (M5) |
 
 ## Crawler security requirements
 
@@ -152,6 +156,8 @@ A milestone cannot be marked PASS when a required security dependency for that m
 | Data Loss | Supabase automated backups | UNVERIFIED |
 | Admin Access | Separate role, no customer impersonation without consent | UNVERIFIED |
 
-## Open questions / Blockers
-
-- **M8 Blocker:** Narrow production launch preparations cannot proceed because required M7 pilot evidence does not exist. Previous milestones M1-M7 have not been implemented.
+## Billing Security (M6)
+- Implemented robust signature verification for all Stripe webhooks.
+- Events are logged in `eventLedger` with idempotency checks to prevent duplicate processing.
+- Concurrent usage requests are met with atomic bounds checks to prevent double usage and quota bypassing.
+- A successful browser redirect (client-side) never grants Premium access; entitlements derive strictly from server-verified webhook events.

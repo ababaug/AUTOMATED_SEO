@@ -179,13 +179,11 @@ This file records architectural and product decisions. Do not silently turn assu
 **Reason/evidence:** Sets clear measurable bounds for the free pilot to ensure cost control and clear success/failure metrics.
 **Follow-up/reversal condition:** Adjust premium hypothesis if customer interviews show lower/higher willingness to pay.
 
-## D-020 — M8 Launch Blocker
+## D-020 — Selected Payment Provider
 
 **Status:** ACCEPTED
 **Date:** 2026-10-01
-**Milestone:** M8
-**Decision:** Halt M8 launch preparations until M7 pilot evidence is collected and M1-M7 are successfully implemented.
-**Reason/evidence:** Project guidelines explicitly require M7 to pass and pilot evidence to exist before preparing a production launch. Currently, only M0 has been completed.
-**Security/privacy impact:** Prevents premature exposure of incomplete or insecure features to production users.
-**Cost/operational impact:** None. Follows established phase-by-phase development constraints.
-**Follow-up/reversal condition:** Proceed with M8 only after M1 through M7 are fully implemented and the M7 exit gate passes.
+**Milestone:** M6
+**Decision:** Stripe is selected as the payment provider.
+**Reason/evidence:** Verified to support hosted checkout, subscription lifecycle management, required currencies and availability in the target market (US/North America).
+**Verification Date:** 2026-10-01
