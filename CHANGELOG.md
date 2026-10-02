@@ -8,16 +8,84 @@ The format is milestone-oriented so Google Jules or another coding agent can app
 
 ### Added
 
+- None.
+
+### Changed
+
+- None.
+
+### Fixed
+
+- None.
+
+### Security
+
+- None.
+
+### Tests
+
+- None.
+
+### Known limitations
+
+- None.
+
+### Gate
+
+- None.
+
+---
+
+## [2026-10-01] — M9 — Scale validated platform workflows
+
+### Added
+- Documented deferment of scaling activities due to lack of measured production data.
+
+### Changed
+- Marked Phase 9 status to BLOCKED in `ROADMAP.md` and `TEST_RESULTS.md`.
+
+### Fixed
+- None.
+
+### Security
+- Acknowledged that scaling must not weaken tenant isolation (not tested due to lack of application).
+
+### Tests
+- Tests could not be executed. Load testing, isolation, and queue fairness require a running system and production evidence.
+
+### Known limitations
+- Cannot measure usage, queues, throughput, or capacity due to non-existent application.
+- Cannot scale features without customer demand and measured performance bottlenecks.
+
+### Gate
+- **BLOCKED**
+- Reason: No measured production evidence or running platform to scale. Core rule mandates scaling only supported by measured usage or validated customer demand.
+- Next milestone: N/A
+
+---
+
+## [2026-10-01] — M0 — Define product validation and architecture
+
+### Added
+
 - Initial project-state documentation for milestone-driven development:
   - `ROADMAP.md`
   - `DECISIONS.md`
   - `SECURITY.md`
   - `TEST_RESULTS.md`
   - `CHANGELOG.md`
+- Added AI-driven structured recommendations schema and Types (`src/types/recommendation.ts`).
+- Added AI adapter interfaces and `MockLocalAIAdapter` (`src/ai/interface.ts`, `src/adapters/ai-adapter.ts`).
+- Added factual safety validation using `OwnerApprovedContext` (`src/ai/validator.ts`).
+- Added a human review queue with state transition logic (`src/reviews/queue.ts`).
+- Added comprehensive jest tests (`src/tests/ai.test.ts`).
 
 ### Changed
 
-- None.
+- Updated `ROADMAP.md` marking M3 exit gates as passed.
+- Updated `DECISIONS.md` with decisions on AI schema and Free/Local AI strategy.
+- Updated `SECURITY.md` with AI prompt injection controls and quotas.
+- Updated `TEST_RESULTS.md` with test suite outcome for M3.
 
 ### Fixed
 
@@ -124,3 +192,12 @@ The format is milestone-oriented so Google Jules or another coding agent can app
 - **PASS / FAIL / BLOCKED**
 - Reason:
 - Next milestone:
+
+## [Unreleased] - Phase 06
+
+### Added
+- Implemented `Subscription`, `Entitlements`, `UsageLedger`, and `WebhookEventLedger` models.
+- Added `getEntitlements` mapping for trial and premium plans based on valid active/grace states.
+- Implemented `UsageService` for atomic, concurrent-safe reservation/consumption with idempotency.
+- Created Stripe Webhook processor `WebhookService` with signature verification, replay protection, and out-of-order resolution.
+- Added Next.js API route `/api/webhooks/stripe` for webhook reception.
