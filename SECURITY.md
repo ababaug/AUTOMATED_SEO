@@ -1,7 +1,7 @@
 # Automated SEO SaaS — Security Plan
 
-**Security status:** Threat model defined (M0). M4 controls are BLOCKED pending M1-M3 implementation.
-**Current milestone:** M4
+**Security status:** Threat model defined (M0). Controls are requirements until verified by tests.
+**Current milestone:** M0
 
 ## Security principles
 
@@ -19,9 +19,9 @@
 
 | Threat | Required control | Verification state |
 |---|---|---|
-| Cross-tenant data access | Server-side membership checks, tenant-scoped DB/storage/cache access | VERIFIED |
-| Forged project/job identifiers | Authorize target organization/project before enqueue and execution | VERIFIED |
-| Account takeover | Verified email, rate limits, secure reset/session handling, privileged MFA | VERIFIED |
+| Cross-tenant data access | Server-side membership checks, tenant-scoped DB/storage/cache access | UNVERIFIED |
+| Forged project/job identifiers | Authorize target organization/project before enqueue and execution | UNVERIFIED |
+| Account takeover | Verified email, rate limits, secure reset/session handling, privileged MFA | UNVERIFIED |
 | OAuth account mix-up | State binding, PKCE where applicable, exact callbacks, narrow scopes | UNVERIFIED |
 | SSRF/internal network access | Safe DNS/IP validation, restricted egress, revalidation on redirects/resources | UNVERIFIED |
 | DNS rebinding | Resolve safely at connection time and enforce network policy | UNVERIFIED |
@@ -130,12 +130,12 @@ A milestone cannot be marked PASS when a required security dependency for that m
 **Verification result:**  
 **Remaining risk:**
 
-| Detailed Initial Threat Model (M1)
+## Detailed Initial Threat Model (M0)
 
 | Threat | Required Control | Verification State |
 |---|---|---|
-| Tenant Isolation | RLS in Supabase, tenant-scoped DB queries | VERIFIED |
-| Account Takeover | Email verification, rate limiting | VERIFIED |
+| Tenant Isolation | RLS in Supabase, tenant-scoped DB queries | UNVERIFIED |
+| Account Takeover | Email verification, rate limiting | UNVERIFIED |
 | OAuth Mix-ups | State binding, strict callback URLs | UNVERIFIED |
 | SSRF | Network policy restrictions, IP validation | UNVERIFIED |
 | DNS Rebinding | Resolve securely at connection time | UNVERIFIED |
@@ -151,3 +151,9 @@ A milestone cannot be marked PASS when a required security dependency for that m
 | Concurrent Edits | Hash checking before apply | UNVERIFIED |
 | Data Loss | Supabase automated backups | UNVERIFIED |
 | Admin Access | Separate role, no customer impersonation without consent | UNVERIFIED |
+
+## Billing Security (M6)
+- Implemented robust signature verification for all Stripe webhooks.
+- Events are logged in `eventLedger` with idempotency checks to prevent duplicate processing.
+- Concurrent usage requests are met with atomic bounds checks to prevent double usage and quota bypassing.
+- A successful browser redirect (client-side) never grants Premium access; entitlements derive strictly from server-verified webhook events.
