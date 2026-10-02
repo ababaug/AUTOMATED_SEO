@@ -172,7 +172,7 @@ Load test at 2× expected next-quarter peak, document cost per tenant, prove no 
 
 ## Next Jules task
 
-Implement **M0 only**. Do not implement M1 until the M0 exit gate is explicitly recorded as PASS.
+Implement **M7 only**. Do not implement M8 until the M7 exit gate is explicitly recorded as PASS.
 
 ## Product Flow (Signup to Measure)
 1. **Signup**: User creates account, verifies email.
